@@ -1,22 +1,21 @@
-import React, { useState, useRef, useEffect } from "react";
-import { TiLocation, TiLocationArrow } from "react-icons/ti";
-import Button from "./Button";
+import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import gsap from 'gsap';
+import { ScrollTrigger } from "gsap/all";
+import { TiLocationArrow } from "react-icons/ti";
+import { useEffect, useRef, useState } from "react";
 
-import {ScrollTrigger} from "gsap/all";
+import Button from "./Button";
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
-
   const [currentIndex, setCurrentIndex] = useState(1);
   const [hasClicked, setHasClicked] = useState(false);
 
   const [loading, setLoading] = useState(true);
   const [loadedVideos, setLoadedVideos] = useState(0);
 
-  const totalVideos = 2;
+  const totalVideos = 1;
   const nextVdRef = useRef(null);
 
   const handleVideoLoad = () => {
@@ -29,19 +28,11 @@ const Hero = () => {
     }
   }, [loadedVideos]);
 
-  const upcomingVideoIndex = (currentIndex % totalVideos) + 1;
-
   const handleMiniVdClick = () => {
     setHasClicked(true);
 
-    setCurrentIndex(upcomingVideoIndex);
-  };  
-
-  useEffect(() => {
-    if(loadedVideos === totalVideos -1) {
-      setLoading(false);
-    }
-  }, [loadedVideos])
+    setCurrentIndex((prevIndex) => (prevIndex % totalVideos) + 1);
+  };
 
   useGSAP(
     () => {
@@ -70,12 +61,11 @@ const Hero = () => {
     }
   );
 
-  useGSAP(()  => {
-    gsap.set('#video-frame', {
-      clipPath:"polygon(14% 0, 72% 0, 88% 90%, 0 95%)",
+  useGSAP(() => {
+    gsap.set("#video-frame", {
+      clipPath: "polygon(14% 0, 72% 0, 88% 90%, 0 95%)",
       borderRadius: "0% 0% 40% 10%",
-    })
-
+    });
     gsap.from("#video-frame", {
       clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
       borderRadius: "0% 0% 0% 0%",
@@ -88,12 +78,11 @@ const Hero = () => {
       },
     });
   });
-  
-    const getVideoSrc = (index) => `videos/hero-${index}.mp4`;
 
-    return(
-        <div className="relative h-dvh w-screen overflow-x-hidden">
+  const getVideoSrc = (index) => `videos/hero-${index}.mp4`;
 
+  return (
+    <div className="relative h-dvh w-screen overflow-x-hidden">
       {loading && (
         <div className="flex-center absolute z-[100] h-dvh w-screen overflow-hidden bg-violet-50">
           {/* https://uiverse.io/G4b413l/tidy-walrus-92 */}
@@ -107,23 +96,6 @@ const Hero = () => {
             <div id="video-frame"
         className="relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-blue-75"
       >
-        <div>
-          {/* <div className="mask-clip-path absolute-center absolute z-50 size-64 cursor-pointer overflow-hidden rounded-lg">
-              <div
-                onClick={handleMiniVdClick}
-                className="origin-center scale-50 opacity-0 transition-all duration-500 ease-in hover:scale-100 hover:opacity-100"
-              >
-                <video
-                  ref={nextVdRef}
-                  src={getVideoSrc((currentIndex % totalVideos) + 1)}
-                  loop
-                  muted
-                  id="current-video"
-                  className="size-64 origin-center scale-150 object-cover object-center"
-                  onLoadedData={handleVideoLoad}
-                />
-              </div>
-          </div> */}
           <video
             ref={nextVdRef}
             src={getVideoSrc(currentIndex)}
@@ -143,7 +115,6 @@ const Hero = () => {
             className="absolute left-0 top-0 size-full object-cover object-center"
             onLoadedData={handleVideoLoad}
           />
-        </div>
 
         <h1 className="special-font hero-heading absolute bottom-5 right-5 z-40 text-blue-75">
         V<b>A</b>LOR<b>A</b>NT
