@@ -1,6 +1,6 @@
 # Project VALORANT 🎮✨  
 
-Um site com animações interativas inspirado no universo de **VALORANT**. Este projeto foi desenvolvido como parte de estudos para aprender e praticar **Vite + React.JS**, **Tailwind CSS** e **GSAP** para animações. 🔥  
+Um site com animações interativas inspirado no universo de **VALORANT**. Este projeto foi desenvolvido como parte de estudos para aprender e praticar **Vite + React.JS**, **Tailwind CSS** e **GSAP** para animações. Inspirado em um vídeo do youtube, todos os créditos: [JavaScript Mastery](https://youtu.be/zA9r5zTllx4?si=AAXgjMBIlrY4ZxWq)   
 
 ## 🚀 Links  
 
@@ -33,11 +33,11 @@ O **Project** é um site temático que explora animações criativas e interativ
 ### 🔧 Como Usar  
 1. Clone o repositório:  
    ```bash 
-   git clone https://github.com/seuusuario/ValorantAnimations.git  
+   git clone https://github.com/seuusuario/ProjectWebsiteAnimate.git  
    ```  
 2. Acesse o diretório do projeto:  
    ```bash   
-   cd ValorantAnimations  
+   cd ProjectWebsiteAnimate  
    ```  
 3. Instale as dependências:  
    ```bash   
@@ -73,11 +73,11 @@ O **Project** é um site temático que explora animações criativas e interativ
 ### 🔧 How to Use  
 1. Clone the repository:  
    ```bash  
-   git clone https://github.com/yourusername/ValorantAnimations.git  
+   git clone https://github.com/yourusername/ProjectWebsiteAnimate.git  
    ```   
 2. Navigate to the project directory:  
    ```bash   
-   cd ValorantAnimations  
+   cd ProjectWebsiteAnimate  
    ```  
 3. Install the dependencies:  
    ```bash   
