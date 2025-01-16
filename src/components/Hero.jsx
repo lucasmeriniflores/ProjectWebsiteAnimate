@@ -16,7 +16,7 @@ const Hero = () => {
   const [loading, setLoading] = useState(true);
   const [loadedVideos, setLoadedVideos] = useState(0);
 
-  const totalVideos = 4;
+  const totalVideos = 2;
   const nextVdRef = useRef(null);
 
   const handleVideoLoad = () => {
@@ -108,7 +108,7 @@ const Hero = () => {
         className="relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-blue-75"
       >
         <div>
-          <div className="mask-clip-path absolute-center absolute z-50 size-64 cursor-pointer overflow-hidden rounded-lg">
+          {/* <div className="mask-clip-path absolute-center absolute z-50 size-64 cursor-pointer overflow-hidden rounded-lg">
               <div
                 onClick={handleMiniVdClick}
                 className="origin-center scale-50 opacity-0 transition-all duration-500 ease-in hover:scale-100 hover:opacity-100"
@@ -123,7 +123,7 @@ const Hero = () => {
                   onLoadedData={handleVideoLoad}
                 />
               </div>
-          </div>
+          </div> */}
           <video
             ref={nextVdRef}
             src={getVideoSrc(currentIndex)}
@@ -146,31 +146,31 @@ const Hero = () => {
         </div>
 
         <h1 className="special-font hero-heading absolute bottom-5 right-5 z-40 text-blue-75">
-          G<b>A</b>MING
+        V<b>A</b>LOR<b>A</b>NT
         </h1>
 
         <div className="absolute left-0 top-0 z-40 size-full">
           <div className="mt-24 px-5 sm:px-10">
             <h1 className="special-font hero-heading text-blue-100">
-              redefi<b>n</b>e
+            INICI<b>A</b>ND<b>O</b>.V25 
             </h1>
 
             <p className="mb-5 max-w-64 font-robert-regular text-blue-100">
-              Enter the Metagame Layer <br /> Unleash the Play Economy
+              Junta a galera, e vamos <br /> dar início à Temporada 2025
             </p>
 
-            <Button
+            <a href="https://youtu.be/nOfOUsxKNG8?si=bqCogsGqsVNJSHYF"><Button
               id="watch-trailer"
-              title="Watch trailer"
+              title="Assista o Trailer"
               leftIcon={<TiLocationArrow />}
               containerClass="bg-yellow-300 flex-center gap-1"
-            />
+            /></a>
           </div>
         </div>
       </div>
 
       <h1 className="special-font hero-heading absolute bottom-5 right-5 text-black">
-        G<b>A</b>MING
+      V<b>A</b>LOR<b>A</b>NT
       </h1>
     </div>
     );
